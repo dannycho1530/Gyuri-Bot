@@ -154,7 +154,7 @@ class WeatherScheduler:
     @tasks.loop(seconds=60)
     async def daily_weather_update(self):
         now = datetime.now()
-        if now.hour == 7 and now.minute == 0:
+        if now.hour == 0 and now.minute == 0:
             try:
                 channel = await self.bot.fetch_channel(int(CHANNEL_ID))
                 if channel is None:
